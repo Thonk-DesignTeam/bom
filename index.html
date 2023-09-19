@@ -6,41 +6,52 @@
     <style>
         body {
             font-family: monospace;
+            color: rgb(201, 201, 201);
+            background-color: #191A19;
+            text-align: centre;
         }
 
         .collapsible {
-            background-color: #777;
+            background-color: #191A19;
             color: white;
             cursor: pointer;
-            padding: 18px;
+            padding: 30px;
             width: 100%;
             border: none;
             text-align: left;
-            outline: none;
+            outline: white;
             font-size: 15px;
             font-family: monospace;
+            transition: max-height 0.2s ease-out;
         }
 
         .active,
         .collapsible:hover {
-            background-color: #555;
+            background-color: #4E9F3D;
         }
-
 
 
         .content {
             padding: 0 18px;
-            display: none;
+            max-height: 0;
             overflow: hidden;
-            background-color: #f1f1f1;
+            transition: max-height 0.2s ease-out;
+            background-color: #3e403e;
+        }
 
+        a {
+            color: hotpink;
+        }
+
+        h2 {
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
 
-    <script>
+    <!-- <script>
         var password = "3340";
         (function passcodeprotect() {
             var passcode = prompt("Enter pin");
@@ -50,7 +61,7 @@
             }
         }());
         alert('access granted');
-    </script>
+    </script> -->
 
     <h2>thonk BOMs</h2>
 
@@ -68,50 +79,51 @@
     <button type="button" class="collapsible">offset/attenuverter</button>
     <div class="content">
         <p>
-            <ul>
-                <li><a href="boms/offset_v0.1.html">offset/attenuverter v0.1</a></li>
-                <li><a href="boms/offset_v0.2.html">offset/attenuverter v0.2</a></li>
-            </ul>
-            </p>
+        <ul>
+            <li><a href="boms/offset_v0.1.html">offset/attenuverter v0.1</a></li>
+            <li><a href="boms/offset_v0.2.html">offset/attenuverter v0.2</a></li>
+        </ul>
+        </p>
     </div>
     <button type="button" class="collapsible">logic</button>
     <div class="content">
         <p>
-            <ul>
-                <li><a href="boms/logic_v0.1_main_board.html">logic v0.1 main board</a></li>
-                <li><a href="boms/logic_v0.1_jack_board.html">logic v0.1 jack board</a></li>
-            </ul>
-            </p>
+        <ul>
+            <li><a href="boms/logic_v0.1_main_board.html">logic v0.1 main board</a></li>
+            <li><a href="boms/logic_v0.1_jack_board.html">logic v0.1 jack board</a></li>
+        </ul>
+        </p>
     </div>
     <button type="button" class="collapsible">vca</button>
     <div class="content">
         <p>
-            <ul>
-                <li><a href="boms/vca_v0.1.html">vca v0.1</a></li>
-                <li><a href="boms/vca_v0.2.html">vca v0.2</a></li>
-                <li><a href="boms/vca_v0.3.html">vca v0.3</a></li>
-            </ul>
-            </p>
+        <ul>
+            <li><a href="boms/vca_v0.1.html">vca v0.1</a></li>
+            <li><a href="boms/vca_v0.2.html">vca v0.2</a></li>
+            <li><a href="boms/vca_v0.3.html">vca v0.3</a></li>
+        </ul>
+        </p>
     </div>
     <button type="button" class="collapsible">vco</button>
     <div class="content">
         <p>
-            <ul>
-                <li><a href="boms/vco4_v0.1_main_board.html">vco v0.1 main board</a></li>
-                <li><a href="boms/vco4_v0.1_jack_board.html">vco v0.1 jack board</a></li>
-                <li><a href="boms/vco4_v0.2_main_board.html">vco v0.2 main board</a></li>
-                <li><a href="boms/vco4_v0.2_jack_board.html">vco v0.2 jack board</a></li>
-            </ul>
-            </p>
+        <ul>
+            <li><a href="boms/vco4_v0.1_main_board.html">vco v0.1 main board</a></li>
+            <li><a href="boms/vco4_v0.1_jack_board.html">vco v0.1 jack board</a></li>
+            <li><a href="boms/vco4_v0.2_main_board.html">vco v0.2 main board</a></li>
+            <li><a href="boms/vco4_v0.2_jack_board.html">vco v0.2 jack board</a></li>
+        </ul>
+        </p>
     </div>
     <button type="button" class="collapsible">vcf</button>
     <div class="content">
         <p>
-            <ul>
-                <li><a href="boms/vcf_dev_board_v0.1.html">vcf dev board v0.1</a></li>
-            </ul>
-            </p>
+        <ul>
+            <li><a href="boms/vcf_dev_board_v0.1.html">vcf dev board v0.1</a></li>
+        </ul>
+        </p>
     </div>
+
 
 
 
@@ -123,14 +135,17 @@
             coll[i].addEventListener("click", function () {
                 this.classList.toggle("active");
                 var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
                 } else {
-                    content.style.display = "block";
+                    content.style.maxHeight = content.scrollHeight + "px";
                 }
             });
         }
     </script>
+
+
+
 
 </body>
 
