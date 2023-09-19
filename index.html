@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            font-family: monospace;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: #555;
+        }
+
+
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var password = "3340";
+        (function passcodeprotect() {
+            var passcode = prompt("Enter pin");
+            while (passcode !== password) {
+                alert("try again");
+                return passcodeprotect();
+            }
+        }());
+        alert('access granted');
+    </script>
+
+    <h2>thonk BOMs</h2>
+
+
+
+    <button type="button" class="collapsible">buffered mult</button>
+    <div class="content">
+        <p>
+        <ul>
+            <li><a href="boms/buffered_mult_v0.1.html">buffered mult v0.1</a></li>
+            <li><a href="boms/buffered_mult_v0.2.html">buffered mult v0.2</a></li>
+        </ul>
+        </p>
+    </div>
+    <button type="button" class="collapsible">offset/attenuverter</button>
+    <div class="content">
+        <p>
+            <ul>
+                <li><a href="boms/offset_v0.1.html">offset/attenuverter v0.1</a></li>
+                <li><a href="boms/offset_v0.2.html">offset/attenuverter v0.2</a></li>
+            </ul>
+            </p>
+    </div>
+    <button type="button" class="collapsible">logic</button>
+    <div class="content">
+        <p>
+            <ul>
+                <li><a href="boms/logic_v0.1_main_board.html">logic v0.1 main board</a></li>
+                <li><a href="boms/logic_v0.1_jack_board.html">logic v0.1 jack board</a></li>
+            </ul>
+            </p>
+    </div>
+    <button type="button" class="collapsible">vca</button>
+    <div class="content">
+        <p>
+            <ul>
+                <li><a href="boms/vca_v0.1.html">vca v0.1</a></li>
+                <li><a href="boms/vca_v0.2.html">vca v0.2</a></li>
+                <li><a href="boms/vca_v0.3.html">vca v0.3</a></li>
+            </ul>
+            </p>
+    </div>
+    <button type="button" class="collapsible">vco</button>
+    <div class="content">
+        <p>
+            <ul>
+                <li><a href="boms/vco4_v0.1_main_board.html">vco v0.1 main board</a></li>
+                <li><a href="boms/vco4_v0.1_jack_board.html">vco v0.1 jack board</a></li>
+                <li><a href="boms/vco4_v0.2_main_board.html">vco v0.2 main board</a></li>
+                <li><a href="boms/vco4_v0.2_jack_board.html">vco v0.2 jack board</a></li>
+            </ul>
+            </p>
+    </div>
+    <button type="button" class="collapsible">vcf</button>
+    <div class="content">
+        <p>
+            <ul>
+                <li><a href="boms/vcf_dev_board_v0.1.html">vcf dev board v0.1</a></li>
+            </ul>
+            </p>
+    </div>
+
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
